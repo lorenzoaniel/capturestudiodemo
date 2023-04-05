@@ -4,6 +4,10 @@ import "normalize.css";
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; //default
+    padding: 0;
+    margin: 0;
+    /* transition: font-size 0.3s ease-in-out; */
 
     /* Hide scrollbar for Firefox */
       scrollbar-width: thin;
@@ -20,21 +24,26 @@ export const GlobalStyle = createGlobalStyle`
         /* background-color: var(--scrollbarThumb-color); */
         border-radius: 0.4rem;
       }
+
+      a {
+        text-decoration: none;
+      }
+      
+      button {
+        all: unset;
+        user-select: none;
+      }
   }
 
     html {
-    max-width: 100vw;
     min-height: fit-content;
     font-size: 62.5%;
     overflow-x: hidden;
 
     body{
       height: inherit;
-      width: inherit;
-
       #root {
         height: inherit;
-        width: inherit;
         font-size: 1.6rem;
       }
     }

@@ -3,4 +3,5 @@ export const motion_props = {
 	animate: "animate",
 	whileHover: "whileHover",
 	whileTap: "whileTap",
+	exit: "exit",
 };

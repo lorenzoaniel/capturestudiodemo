@@ -48,10 +48,16 @@ export const default_theme = {
       font-size: 2rem;
       line-height: 100%;
       color: #FC4308;
-      display: none;
+      // transform: scale(0);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: 0;
 
       @media ${device.tablet} {
-        display: block;
+        // transform: scale(1);
+        opacity: 1;
+        width: 100%;
+        
       }
     `,
 	},

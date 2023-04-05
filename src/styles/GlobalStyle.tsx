@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif; //default
     padding: 0;
     margin: 0;
-    /* transition: font-size 0.3s ease-in-out; */
+    transition: font-size 0.3s ease-in-out;
 
     /* Hide scrollbar for Firefox */
       scrollbar-width: thin;

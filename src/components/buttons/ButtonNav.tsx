@@ -23,7 +23,7 @@ const Main = styled(motion.button)(
   ${theme.font.navbutton}
   height: 3.8rem;
   flex: 0 1 fit-content;
-  padding: 0.8rem 1.6rem 0.1rem;
+  padding: 0.2rem 1rem;
 `
 );
 
@@ -31,12 +31,15 @@ const _MotionVariants = (theme: any) => {
 	return {
 		Main: {
 			initial: {
-				border: `0.1rem solid transparent`,
+				border: `0.1rem solid rgba(252, 67, 8, 0)`,
 				borderRadius: `0.3rem`,
 			},
 			whileHover: {
-				border: `0.1rem solid ${theme.color.orange.primary}`,
+				border: `0.1rem solid rgba(252, 67, 8, 1)`,
 				borderRadius: `0.3rem`,
+				transition: {
+					ease: "easeInOut",
+				},
 			},
 		},
 	};

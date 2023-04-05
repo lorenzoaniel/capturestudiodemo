@@ -15,9 +15,9 @@ export const GlobalStyle = createGlobalStyle`
 
       /* Hide scrollbar for Chrome and Edge */
       &::-webkit-scrollbar {
-        /* background-color: var(--scrollbar-color); */
-        width: 0.8rem;
-        height: 0.8rem;
+        /* background-color: transparent; */
+        width: 0.1rem;
+        height: 0.1rem;
       }
 
       &::-webkit-scrollbar-thumb {

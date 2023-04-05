@@ -9,11 +9,17 @@ export const default_theme = {
       `,
 		},
 		section: {
-			padding: "padding: 0 5%;",
+			padding: "padding: 0 15%;",
 		},
 		flex: {
 			cntr: `
         display: flex;
+        justify-content: center;
+        align-items: center;
+      `,
+			cntrcol: `
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       `,
@@ -31,34 +37,5 @@ export const default_theme = {
 			secondary: " linear-gradient(90deg, #323E2A 0%, #101815 100%)",
 		},
 		darkgreen: "#0E1513",
-	},
-	font: {
-		navbutton: `
-      font-weight: 400;
-      line-height: 0.2rem;
-      color: #FC4308;
-      font-size: 1.3rem;
-
-      @media ${device.tablet} {
-        font-size: 1.6rem;
-      }
-    `,
-		navlogo: `
-      font-weight: 500;
-      font-size: 2rem;
-      line-height: 100%;
-      color: #FC4308;
-      // transform: scale(0);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      width: 0;
-
-      @media ${device.tablet} {
-        // transform: scale(1);
-        opacity: 1;
-        width: 100%;
-        
-      }
-    `,
 	},
 };

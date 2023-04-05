@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactSVG } from "react-svg";
 import { motion_props } from "../../styles/mixins/motion_props";
+import { device } from "../../styles/breakpoints";
 
 const ButtonNavLogo: React.FC = () => {
 	const logosrc = "./public/assets/logo/Logo.svg";
@@ -25,7 +26,22 @@ const Main = styled(motion.div)(
 
 const LogoText = styled(motion.h1)(
 	({ theme }) => `
-  ${theme.font.navlogo}
+	width: 0;
+
+  font-weight: 500;
+	font-size: 2rem;
+	line-height: 100%;
+	font-weight: 400;
+	color: ${theme.color.orange.primary};
+
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	
+
+	@media ${device.tablet} {
+		opacity: 1;
+		width: 100%;
+	}
 `
 );
 

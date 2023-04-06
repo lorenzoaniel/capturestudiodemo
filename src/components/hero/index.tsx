@@ -12,7 +12,7 @@ interface Props {
 
 const Hero: React.FC<Props> = ({ title, desc }) => {
 	const { src } = useImage({
-		srcList: "./public/assets/images/intro/introimg.png",
+		srcList: "../assets/images/intro/introimg.png",
 	});
 
 	return (
@@ -42,7 +42,7 @@ const Main = styled(motion.div)(
   flex-direction: column;
   row-gap: 8rem;
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     flex-direction: row;
   }
 `
@@ -51,7 +51,7 @@ const Main = styled(motion.div)(
 const ImgSection = styled(motion.section)(
 	({ theme }) => `
 	${theme.mixins.flex.cntrcol}
-  flex: 2 1;
+  flex: 2 1 fit-content; // matches navbar proportion
 
   & img {
     width: 100%;
@@ -66,7 +66,7 @@ const ImgSection = styled(motion.section)(
 const Content = styled(motion.section)(
 	({ theme }) => `
 	${theme.mixins.flex.cntrcol}
-  flex: 5 1;
+  flex: 5 1 fit-content; // matches navbar proportion
   align-items: flex-start;
   row-gap: 2.4rem;
 `

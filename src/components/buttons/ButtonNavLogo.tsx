@@ -6,7 +6,7 @@ import { motion_props } from "../../styles/mixins/motion_props";
 import { device } from "../../styles/breakpoints";
 
 const ButtonNavLogo: React.FC = () => {
-	const logosrc = "./public/assets/logo/Logo.svg";
+	const logosrc = "../assets/logo/Logo.svg";
 	const logotext = "Capture Studio";
 
 	return (

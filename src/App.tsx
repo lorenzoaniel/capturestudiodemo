@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { default_theme } from "./styles/themes/default_theme";
 import Intro from "./sections/intro";
+import Projects from "./sections/projects";
 
 const App: React.FC = () => {
 	return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
 			<AnimatePresence>
 				<Main>
 					<Intro />
+					<Projects />
 				</Main>
 			</AnimatePresence>
 		</ThemeProvider>

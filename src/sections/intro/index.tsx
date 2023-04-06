@@ -17,7 +17,7 @@ const Intro: React.FC = () => {
 	);
 };
 
-const Main = styled(motion.main)(
+const Main = styled(motion.section)(
 	({ theme }) => `
 	${theme.mixins.section.padding}
 	background: ${theme.background.lightgreen.primary};

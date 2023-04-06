@@ -31,7 +31,7 @@ const Main = styled(motion.nav)(
 const LogoSection = styled(motion.div)(
 	({ theme }) => `
   ${theme.mixins.flex.cntr}
-  flex: 4 1 fit-content;
+  flex: 4 1 fit-content; // matches hero proportion
   display: flex;
   justify-content: flex-start;
 `
@@ -42,7 +42,7 @@ const MenuSection = styled(motion.div)(
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 1 1 fit-content;
+  flex: 1 1 fit-content; // matches hero proportion
 `
 );
 

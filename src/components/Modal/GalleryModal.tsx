@@ -75,8 +75,8 @@ const Header = styled(Modal.Header)(
 const Title = styled(motion.h2)(
 	({ theme }) => `
   align-self: center;
+.
 
-  font-weight: 500;
   font-size: 60px;
   line-height: 100%;
   letter-spacing: -0.02em;
@@ -86,9 +86,13 @@ const Title = styled(motion.h2)(
 
 const Body = styled(Modal.Body)(
 	({ theme }) => `
-  ${theme.mixins.flex.cntr}
+  ${theme.mixins.flex.cntrcol}
   flex-wrap: wrap;
   gap: 8rem;
+
+   & img {
+    width: 90%;
+  }
 `
 );
 

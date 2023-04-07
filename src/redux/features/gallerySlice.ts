@@ -11,11 +11,17 @@ const initialState: initialState = {
 	modalToggle: false,
 	galleryProjects: new Map<string, { src: string; date: string }>([
 		["Aisha Patel", { src: "../assets/images/projects/aishapatel.jpg", date: "2018" }],
-		["Fatima Hassan", { src: "../assets/images/projects/fatimahassan.jpg", date: "2018" }],
-		["Isabella Costa", { src: "../assets/images/projects/isabellacosta.jpg", date: "2018" }],
+		["Fatima Hassan", { src: "../assets/images/projects/fatimahassan.jpg", date: "2021" }],
+		["Isabella Costa", { src: "../assets/images/projects/isabellacosta.jpg", date: "2022" }],
 		["Aisha Patel Filler", { src: "../assets/images/projects/aishapatel.jpg", date: "2018" }],
-		["Fatima Hassan Filler", { src: "../assets/images/projects/fatimahassan.jpg", date: "2018" }],
-		["Isabella Costa Filler", { src: "../assets/images/projects/isabellacosta.jpg", date: "2018" }],
+		["Fatima Hassan Filler", { src: "../assets/images/projects/fatimahassan.jpg", date: "2021" }],
+		["Isabella Costa Filler", { src: "../assets/images/projects/isabellacosta.jpg", date: "2022" }],
+		["Aisha Patel Filler 2", { src: "../assets/images/projects/aishapatel.jpg", date: "2018" }],
+		["Fatima Hassan Filler 2", { src: "../assets/images/projects/fatimahassan.jpg", date: "2021" }],
+		[
+			"Isabella Costa Filler 2",
+			{ src: "../assets/images/projects/isabellacosta.jpg", date: "2022" },
+		],
 	]),
 	prjShownAmount: 3,
 };

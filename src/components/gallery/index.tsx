@@ -53,10 +53,6 @@ const Main = styled(motion.div)(
   ${theme.mixins.flex.cntrcol}
   row-gap: 7rem;
   width: 100%;
-  
-  & img {
-    width: 100%;
-  }
 
   @media ${device.laptop} {
     column-gap: 2.8rem;
@@ -70,6 +66,10 @@ const ImgWrapper = styled(motion.div)(
 	({ theme }) => `
     ${theme.mixins.flex.cntrcol}
     row-gap: 2rem;
+
+		& img {
+			width: 90%;
+		}
   `
 );
 
@@ -80,7 +80,11 @@ const LabelName = styled(motion.div)(
   line-height: 105%;
   letter-spacing: -0.065em;
   color: ${theme.color.orange.primary};
-  align-self: flex-start;
+  align-self: center;
+
+	@media ${device.laptop} {
+    align-self: flex-start;
+  }
 `
 );
 
@@ -90,7 +94,11 @@ const LabelDate = styled(motion.div)(
   font-size: 1.4rem;
   line-height: 150%;
   color: rgba(252, 67, 8, 0.8);
-  align-self: flex-start;
+  align-self: center;
+
+	@media ${device.laptop} {
+    align-self: flex-start;
+  }
 `
 );
 

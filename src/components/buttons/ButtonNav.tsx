@@ -45,7 +45,7 @@ const _MotionVariants = (theme: any) => {
 				borderRadius: `0.3rem`,
 			},
 			whileHover: {
-				border: `0.1rem solid rgba(252, 67, 8, 1)`,
+				border: `0.1rem solid ${theme.color.orange.primary}`,
 				borderRadius: `0.3rem`,
 				transition: {
 					ease: "easeInOut",

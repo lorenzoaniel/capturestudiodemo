@@ -1,25 +1,49 @@
 import { motion } from "framer-motion";
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Gallery from "../../components/gallery";
+import ButtonPrimary from "../../components/buttons/ButtonPrimary";
+import { useAppDispatch } from "../../redux/hooks";
+import { modalToggle } from "../../redux/features/gallerySlice";
 
-const Projects = () => {
-	const projectsrc = [
-		"../assets/images/projects/aishapatel.jpg",
-		"../assets/images/projects/fatimahassan.jpg",
-		"../assets/images/projects/isabellacosta.jpg",
-	];
+const Projects: React.FC = () => {
+	const dispatch = useAppDispatch();
+	const theme: any = useTheme();
+
 	return (
 		<Main>
-			<Gallery imgsrc={projectsrc} />
+			<Title>{"Our Work"}</Title>
+			<Gallery />
+			<ButtonPrimary
+				variant={theme.variant.btn.prj}
+				title={"View all work"}
+				handleClick={() => dispatch(modalToggle())}
+			/>
 		</Main>
 	);
 };
 
 const Main = styled(motion.section)(
 	({ theme }) => `
+  ${theme.mixins.section.padding}
+  ${theme.mixins.flex.cntrcol}
   background: ${theme.background.darkgreen};
-  height: 98.4rem;
+  height: fit-content;
+  padding-top: 8rem; // to prevent mixin clash
+  padding-bottom: 8rem; // to prevent mixin clash
+  row-gap: 8rem;
+`
+);
+
+const Title = styled(motion.h2)(
+	({ theme }) => `
+  align-self: flex-start;
+
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: ${theme.color.orange.primary};
 `
 );
 

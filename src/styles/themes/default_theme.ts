@@ -38,4 +38,18 @@ export const default_theme = {
 		},
 		darkgreen: "#0E1513",
 	},
+	variant: {
+		btn: {
+			prj: `
+        text-align: center;
+        width: 13.7rem;
+        align-self: flex-end;
+      `,
+			prjcls: `
+        text-align: center;
+        width: 13.7rem;
+        align-self: center;
+      `,
+		},
+	},
 };

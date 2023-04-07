@@ -68,7 +68,7 @@ const ImgWrapper = styled(motion.div)(
     row-gap: 2rem;
 
 		& img {
-			width: 90%;
+			width: 100%;
 		}
   `
 );

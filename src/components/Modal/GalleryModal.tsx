@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { modalToggle, selectGalleryInfo } from "../../redux/features/gallerySlice";
 import { motion } from "framer-motion";
 import ButtonPrimary from "../buttons/ButtonPrimary";
+import { device } from "../../styles/breakpoints";
 
 interface Props {
 	data: JSX.Element[];
@@ -90,8 +91,15 @@ const Body = styled(Modal.Body)(
   flex-wrap: wrap;
   gap: 8rem;
 
-   & img {
+  & img {
     width: 90%;
+  }
+
+	@media ${device.laptop} {
+		flex-direction: row;
+    & img {
+			width: 100%;
+		}
   }
 `
 );

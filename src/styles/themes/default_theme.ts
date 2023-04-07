@@ -1,5 +1,13 @@
 import { device } from "../breakpoints";
 
+const mixins = {
+	variant: {
+		btn: {
+			primary: ``,
+		},
+	},
+};
+
 export const default_theme = {
 	mixins: {
 		dimensions: {
@@ -42,13 +50,18 @@ export const default_theme = {
 		btn: {
 			prj: `
         text-align: center;
-        width: 13.7rem;
         align-self: flex-end;
+        width: 13.7rem;
       `,
 			prjcls: `
         text-align: center;
         width: 13.7rem;
         align-self: center;
+      `,
+			prt: `
+        text-align: center;
+        width: 16rem;
+        align-self: flex-start;
       `,
 		},
 	},

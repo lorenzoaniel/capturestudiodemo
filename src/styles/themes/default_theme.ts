@@ -18,6 +18,7 @@ export const default_theme = {
 		},
 		section: {
 			padding: "padding: 0 15%;",
+			paddingfooter: "padding: 0 7.5%;",
 		},
 		flex: {
 			cntr: `
@@ -63,6 +64,18 @@ export const default_theme = {
         width: 16rem;
         align-self: flex-start;
       `,
+			cnt: `
+        text-align: center;
+        width: 11.9rem;
+        align-self: center;
+      `,
+		},
+	},
+	icon: {
+		default: {
+			height: 25,
+			width: 25,
+			color: "#FC4308",
 		},
 	},
 };

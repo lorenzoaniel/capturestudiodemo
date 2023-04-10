@@ -13,7 +13,11 @@ const Footer: React.FC = () => {
 		<Main className="test">
 			<Navbar fixed={false} />
 			<Socials>
-				<Copyright>{"© 2023 Capture Studio. All rights reserved."}</Copyright>
+				<Copyright>
+					{
+						"© 2023 Capture Studio. All rights reserved. Developed And Modified By: Mikhail Lorenzo Aniel For Educational Purposes"
+					}
+				</Copyright>
 				<SocialWrapper>
 					<RiFacebookFill style={theme.icon.default} />
 					<FiInstagram style={theme.icon.default} />

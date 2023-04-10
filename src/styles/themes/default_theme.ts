@@ -9,6 +9,19 @@ const mixins = {
 };
 
 export const default_theme = {
+	motion: {
+		btn: {
+			default: {
+				whileHover: {
+					cursor: "pointer",
+					scale: 1.1,
+				},
+				whileTap: {
+					scale: 1,
+				},
+			},
+		},
+	},
 	mixins: {
 		dimensions: {
 			fill: `

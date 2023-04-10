@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { ReactSVG } from "react-svg";
 import { motion_props } from "../../styles/mixins/motion_props";
 import { device } from "../../styles/breakpoints";
@@ -13,11 +13,12 @@ interface Props {
 const ButtonNavLogo: React.FC<Props> = ({ destination }) => {
 	const logosrc = "../assets/logo/Logo.svg";
 	const logotext = "Capture Studio";
+	const theme: any = useTheme();
 
 	return (
 		<Main
 			{...motion_props}
-			variants={_MotionVariants.Main}
+			variants={theme.motion.btn.default}
 			onClick={() => {
 				scroller.scrollTo(destination, {
 					duration: 1500,
@@ -63,14 +64,5 @@ const LogoText = styled(motion.h1)(
 	}
 `
 );
-
-const _MotionVariants = {
-	Main: {
-		whileHover: {
-			cursor: "pointer",
-			filter: "backdrop(0 0 1rem black)",
-		},
-	},
-};
 
 export default ButtonNavLogo;

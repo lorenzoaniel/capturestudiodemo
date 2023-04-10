@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { useAppSelector } from "../../redux/hooks";
 import { selectPortraitInfo } from "../../redux/features/portraitsSlice";
@@ -43,9 +43,7 @@ const Portraits: React.FC = () => {
 				<ButtonPrimary
 					variant={theme.variant.btn.prt}
 					title={"View case study"}
-					handleClick={function (): void {
-						throw new Error("Function not implemented.");
-					}}
+					handleClick={function (): void {}}
 				/>
 			</ContentSecondary>
 		</Main>

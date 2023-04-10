@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
 import ButtonPrimary from "../buttons/ButtonPrimary";
 import { useImage } from "react-image";
 import { device } from "../../styles/breakpoints";
+import DefaultModal from "../Modal/DefaultModal";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { selectPortraitInfo } from "../../redux/features/portraitsSlice";
 
 interface Props {
 	imgSrc: string;
@@ -14,10 +17,22 @@ interface Props {
 }
 
 const PortraitDisplay: React.FC<Props> = ({ imgSrc, date, title, desc, isLeft }) => {
+	const [data, setData] = useState<Props>({ imgSrc, date, title, desc, isLeft });
+	const [toggle, setToggle] = useState(false);
 	const theme: any = useTheme();
 	const { src } = useImage({
 		srcList: imgSrc,
 	});
+
+	const toggleModal = () => {
+		setToggle((curr) => !curr);
+	};
+
+	useEffect(() => {
+		setData({ imgSrc, date, title, desc, isLeft });
+	}, []);
+
+	console.log(toggle);
 
 	return (
 		<Main>
@@ -28,14 +43,35 @@ const PortraitDisplay: React.FC<Props> = ({ imgSrc, date, title, desc, isLeft })
 				<ButtonPrimary
 					variant={theme.variant.btn.prt}
 					title={"View case study"}
-					handleClick={function (): void {
-						throw new Error("Function not implemented.");
+					handleClick={() => {
+						toggleModal();
 					}}
 				/>
 			</Content>
 			<ImgWrapper isLeft={isLeft}>
 				<img src={src} />
 			</ImgWrapper>
+			<DefaultModal
+				data={[
+					<>
+						<div
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								flexDirection: "column",
+							}}
+						>
+							<Date>{date}</Date>
+							<Desc style={{ textAlign: "center" }}>{desc}</Desc>
+						</div>
+						<img src={src} style={{ width: "90vmin", height: "90vmin" }} />
+					</>,
+				]}
+				title={data.title}
+				toggle={toggle}
+				toggleHandle={() => toggleModal()}
+			/>
 		</Main>
 	);
 };
@@ -69,10 +105,10 @@ const Content = styled(motion.div)<ChildComps>(
 	@media ${device.laptop} {
 		order: ${isLeft ? 2 : 1};
 		padding-left: ${isLeft ? "19rem" : "9"};
-		// align-items: ${isLeft ? "flex-end" : "flex-start"};
+		
 		align-items: "flex-start";
 		& button {
-			// align-self: ${isLeft ? "flex-end" : "flex-start"};
+			
 			align-self: "flex-start";
 		}
 	}

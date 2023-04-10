@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import React, { Suspense } from "react";
 import { useImage } from "react-image";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { device } from "../../styles/breakpoints";
 import { IoMdPlay } from "react-icons/io";
+import { motion_props } from "../../styles/mixins/motion_props";
 
 interface Props {
 	title: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const Hero: React.FC<Props> = ({ title, desc }) => {
+	const theme: any = useTheme();
 	const { src } = useImage({
 		srcList: "../assets/images/intro/introimg.png",
 	});
@@ -20,7 +22,7 @@ const Hero: React.FC<Props> = ({ title, desc }) => {
 			<Content>
 				<Title>{title}</Title>
 				<Desc>{desc}</Desc>
-				<Icon>
+				<Icon {...motion_props} variants={theme.motion.btn.default}>
 					<IoMdPlay style={{ height: "2.8rem", width: "2.8rem" }} />
 				</Icon>
 			</Content>

@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 
 interface initialState {
-	modalToggle: boolean;
 	portraitsPrimary: Map<string, { src: string; date: string; isLeft: boolean; desc: string }>;
 	portraitSecondary: {
 		date: string;
@@ -12,7 +11,6 @@ interface initialState {
 }
 
 const initialState: initialState = {
-	modalToggle: false,
 	portraitsPrimary: new Map<string, { src: string; date: string; isLeft: boolean; desc: string }>([
 		[
 			"Gabriela Silva",
@@ -52,14 +50,8 @@ const initialState: initialState = {
 export const portraitsSlice = createSlice({
 	name: "portraitsSlice",
 	initialState,
-	reducers: {
-		modalToggle: (state) => {
-			state.modalToggle = !state.modalToggle;
-		},
-	},
+	reducers: {},
 });
-
-export const { modalToggle } = portraitsSlice.actions;
 
 export const selectPortraitInfo = (state: RootState) => state.portraitsSlice;
 

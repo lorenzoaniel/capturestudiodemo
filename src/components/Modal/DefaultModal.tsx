@@ -1,19 +1,18 @@
 import Modal from "react-bootstrap/Modal";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { modalToggle, selectGalleryInfo } from "../../redux/features/gallerySlice";
 import { motion } from "framer-motion";
 import ButtonPrimary from "../buttons/ButtonPrimary";
 import { device } from "../../styles/breakpoints";
 
 interface Props {
 	data: JSX.Element[];
+	title: string;
+	toggle: any;
+	toggleHandle: any;
 }
 
-const GalleryModal: React.FC<Props> = ({ data }) => {
-	const dispatch = useAppDispatch();
-	let galleryInfo = useAppSelector(selectGalleryInfo);
+const DefaultModal: React.FC<Props> = ({ data, title, toggle, toggleHandle }) => {
 	const theme: any = useTheme();
 
 	const disableScroll = () => {
@@ -32,17 +31,17 @@ const GalleryModal: React.FC<Props> = ({ data }) => {
 	};
 
 	useEffect(() => {
-		galleryInfo.modalToggle ? disableScroll() : enableScroll();
-	}, [galleryInfo.modalToggle]);
+		toggle ? disableScroll() : enableScroll();
+	}, [toggle]);
 
 	return (
-		<ModalCustom show={galleryInfo.modalToggle} onHide={() => dispatch(modalToggle())}>
+		<ModalCustom show={toggle}>
 			<Header>
-				<Title>{"Our Work"}</Title>
+				<Title>{title}</Title>
 				<ButtonPrimary
 					variant={theme.variant.btn.prjcls}
 					title={"Close"}
-					handleClick={() => dispatch(modalToggle())}
+					handleClick={() => toggleHandle()}
 				/>
 			</Header>
 			<Body>{data}</Body>
@@ -103,4 +102,4 @@ const Body = styled(Modal.Body)(
 `
 );
 
-export default GalleryModal;
+export default DefaultModal;

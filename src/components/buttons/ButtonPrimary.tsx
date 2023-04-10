@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { motion_props } from "../../styles/mixins/motion_props";
 
 interface Props {
 	variant: string;
@@ -9,8 +10,14 @@ interface Props {
 }
 
 const ButtonPrimary: React.FC<Props> = ({ variant, title, handleClick }) => {
+	const theme: any = useTheme();
 	return (
-		<Main variant={variant} onClick={handleClick}>
+		<Main
+			{...motion_props}
+			variants={theme.motion.btn.default}
+			variant={variant}
+			onClick={handleClick}
+		>
 			{title}
 		</Main>
 	);
@@ -25,6 +32,7 @@ const Main = styled(motion.button)<Main>(
   ${variant}
   height: 3.8rem;
   border: 0.1rem solid ${theme.color.orange.primary}; 
+	font-size: 1.6rem;
 
   color: ${theme.color.orange.primary};
 `

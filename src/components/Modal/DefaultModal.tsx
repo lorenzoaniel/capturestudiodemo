@@ -75,6 +75,7 @@ const Header = styled(Modal.Header)(
 const Title = styled(motion.h2)(
 	({ theme }) => `
   align-self: center;
+	text-align: center;
 
   font-size: 6rem;
   line-height: 100%;

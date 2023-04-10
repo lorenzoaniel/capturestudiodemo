@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { device } from "../../styles/breakpoints";
 import { useAppSelector } from "../../redux/hooks";
 import { selectContactInfo } from "../../redux/features/contactSlice";
 import ButtonPrimary from "../../components/buttons/ButtonPrimary";
 import Footer from "../../components/footer";
+import DefaultModal from "../../components/Modal/DefaultModal";
 
 const Contact: React.FC = () => {
+	const [toggle, setToggle] = useState(false);
 	const contactInfo = useAppSelector(selectContactInfo);
 	const theme: any = useTheme();
+
+	const toggleModal = () => {
+		setToggle((curr) => !curr);
+	};
 
 	return (
 		<Main id={"contact"}>
@@ -19,9 +25,13 @@ const Contact: React.FC = () => {
 				<ButtonPrimary
 					variant={theme.variant.btn.cnt}
 					title={"Contact us"}
-					handleClick={function (): void {
-						throw new Error("Function not implemented.");
-					}}
+					handleClick={() => toggleModal()}
+				/>
+				<DefaultModal
+					data={[]}
+					title={"Contact Us"}
+					toggle={toggle}
+					toggleHandle={() => toggleModal()}
 				/>
 			</ContactSection>
 			<FooterSection>

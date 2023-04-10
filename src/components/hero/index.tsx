@@ -38,14 +38,14 @@ const Hero: React.FC<Props> = ({ title, desc }) => {
 				</ImgSection>
 			</Suspense>
 			<DefaultModal
-				data={[
-					<div key={"../assets/video/intro/introsample.mp4"}>
+				data={
+					<>
 						<video controls style={{ width: "90vmin", height: "90vmin" }}>
 							<source src="../assets/video/intro/introsample.mp4" type="video/mp4" />
 							Your browser does not support the video tag.
 						</video>
-					</div>,
-				]}
+					</>
+				}
 				title={"Sample Video"}
 				toggle={toggle}
 				toggleHandle={() => toggleModal()}

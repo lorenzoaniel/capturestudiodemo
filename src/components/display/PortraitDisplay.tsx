@@ -48,7 +48,7 @@ const PortraitDisplay: React.FC<Props> = ({ imgSrc, date, title, desc, isLeft })
 				<img src={src} />
 			</ImgWrapper>
 			<DefaultModal
-				data={[
+				data={
 					<>
 						<div
 							style={{
@@ -62,8 +62,8 @@ const PortraitDisplay: React.FC<Props> = ({ imgSrc, date, title, desc, isLeft })
 							<Desc style={{ textAlign: "center" }}>{desc}</Desc>
 						</div>
 						<img src={src} style={{ width: "90vmin", height: "90vmin" }} />
-					</>,
-				]}
+					</>
+				}
 				title={data.title}
 				toggle={toggle}
 				toggleHandle={() => toggleModal()}

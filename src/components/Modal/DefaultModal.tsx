@@ -6,7 +6,7 @@ import ButtonPrimary from "../buttons/ButtonPrimary";
 import { device } from "../../styles/breakpoints";
 
 interface Props {
-	data: JSX.Element[];
+	data: JSX.Element[] | JSX.Element;
 	title: string;
 	toggle: any;
 	toggleHandle: any;

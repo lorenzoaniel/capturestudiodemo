@@ -36,6 +36,7 @@ const Hero: React.FC<Props> = ({ title, desc }) => {
 const Main = styled(motion.div)(
 	({ theme }) => `
   ${theme.mixins.flex.cntr}
+  margin-top: 7.4rem;
 	column-gap: 5rem;
   flex: 1 1;
   padding: 8rem 0rem;

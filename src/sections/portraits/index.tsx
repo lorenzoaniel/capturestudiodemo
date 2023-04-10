@@ -32,7 +32,7 @@ const Portraits: React.FC = () => {
 	};
 
 	return (
-		<Main>
+		<Main id={"portraits"}>
 			<ContentPrimary>{createPortraits()}</ContentPrimary>
 			<ContentSecondary>
 				<Date>{portraitInfo.portraitSecondary.date}</Date>

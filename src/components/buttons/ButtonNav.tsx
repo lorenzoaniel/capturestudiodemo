@@ -3,16 +3,28 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import { motion_props } from "../../styles/mixins/motion_props";
 import { device } from "../../styles/breakpoints";
+import { scroller } from "react-scroll";
 
 interface Props {
 	title: string;
+	destination: string;
 }
 
-const ButtonNav: React.FC<Props> = ({ title }) => {
+const ButtonNav: React.FC<Props> = ({ title, destination }) => {
 	const theme = useTheme();
 
 	return (
-		<Main {...motion_props} variants={_MotionVariants(theme).Main}>
+		<Main
+			onClick={() => {
+				scroller.scrollTo(destination, {
+					duration: 1500,
+					delay: 100,
+					smooth: true,
+				});
+			}}
+			{...motion_props}
+			variants={_MotionVariants(theme).Main}
+		>
 			{title}
 		</Main>
 	);

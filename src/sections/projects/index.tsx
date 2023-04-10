@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
 	const theme: any = useTheme();
 
 	return (
-		<Main>
+		<Main id={"projects"}>
 			<Title>{"Our Work"}</Title>
 			<Gallery />
 			<ButtonPrimary

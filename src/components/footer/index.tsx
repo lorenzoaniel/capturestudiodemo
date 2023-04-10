@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 
 	return (
 		<Main className="test">
-			<Navbar />
+			<Navbar fixed={false} />
 			<Socials>
 				<Copyright>{"© 2023 Capture Studio. All rights reserved."}</Copyright>
 				<SocialWrapper>

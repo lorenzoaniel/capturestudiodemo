@@ -4,13 +4,28 @@ import styled from "styled-components";
 import { ReactSVG } from "react-svg";
 import { motion_props } from "../../styles/mixins/motion_props";
 import { device } from "../../styles/breakpoints";
+import { scroller } from "react-scroll";
 
-const ButtonNavLogo: React.FC = () => {
+interface Props {
+	destination: string;
+}
+
+const ButtonNavLogo: React.FC<Props> = ({ destination }) => {
 	const logosrc = "../assets/logo/Logo.svg";
 	const logotext = "Capture Studio";
 
 	return (
-		<Main>
+		<Main
+			{...motion_props}
+			variants={_MotionVariants.Main}
+			onClick={() => {
+				scroller.scrollTo(destination, {
+					duration: 1500,
+					delay: 100,
+					smooth: true,
+				});
+			}}
+		>
 			<ReactSVG src={logosrc} />
 			<LogoText>{logotext}</LogoText>
 		</Main>
@@ -21,6 +36,10 @@ const Main = styled(motion.div)(
 	({ theme }) => `
   ${theme.mixins.flex.cntr}
   column-gap: 1rem;
+
+	// &:hover {
+	// 	cursor: pointer;
+	// }
 `
 );
 
@@ -45,15 +64,13 @@ const LogoText = styled(motion.h1)(
 `
 );
 
-// const _MotionVariants = {
-// 	LogoText: {
-// 		exit: {
-// 			transition: {
-// 				duration: 0.5,
-// 				ease: "easeInOut",
-// 			},
-// 		},
-// 	},
-// };
-// {...motion_props} variants={_MotionVariants.LogoText}
+const _MotionVariants = {
+	Main: {
+		whileHover: {
+			cursor: "pointer",
+			filter: "backdrop(0 0 1rem black)",
+		},
+	},
+};
+
 export default ButtonNavLogo;

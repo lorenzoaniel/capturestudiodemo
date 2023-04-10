@@ -10,8 +10,8 @@ const Intro: React.FC = () => {
 	const herodesc =
 		"At our studio, we don't just take pictures - we capture the world. Our passion for photography goes beyond just snapping a photo - we strive to create images that tell a story, evoke emotions, and capture the essence of the world around us.";
 	return (
-		<Main>
-			<Navbar />
+		<Main id={"intro"}>
+			<Navbar fixed={true} />
 			<Hero title={herotitle} desc={herodesc} />
 		</Main>
 	);
@@ -24,6 +24,7 @@ const Main = styled(motion.section)(
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
+
 `
 );
 

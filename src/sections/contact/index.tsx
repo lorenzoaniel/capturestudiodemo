@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
 	const theme: any = useTheme();
 
 	return (
-		<Main>
+		<Main id={"contact"}>
 			<ContactSection>
 				<Title>{contactInfo.main.title}</Title>
 				<Desc>{contactInfo.main.desc}</Desc>

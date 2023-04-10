@@ -3,28 +3,48 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import ButtonNav from "../buttons/ButtonNav";
 import ButtonNavLogo from "../buttons/ButtonNavLogo";
+import { device } from "../../styles/breakpoints";
 
-const Navbar: React.FC = () => {
+interface Props {
+	fixed: boolean;
+}
+
+const Navbar: React.FC<Props> = ({ fixed }) => {
 	return (
-		<Main>
+		<Main fixed={fixed}>
 			<LogoSection>
-				<ButtonNavLogo />
+				<ButtonNavLogo destination={"intro"} />
 			</LogoSection>
 			<MenuSection>
-				<ButtonNav title={"Projects"} />
-				<ButtonNav title={"Portraits"} />
-				<ButtonNav title={"Contact"} />
+				<ButtonNav title={"Projects"} destination={"projects"} />
+				<ButtonNav title={"Portraits"} destination={"portraits"} />
+				<ButtonNav title={"Contact"} destination={"contact"} />
 			</MenuSection>
 		</Main>
 	);
 };
 
-const Main = styled(motion.nav)(
-	({ theme }) => `
+const Main = styled(motion.nav)<Props>(
+	({ theme, fixed }) => `
+	${
+		fixed
+			? `
+			width: 100%;
+			left: 0;
+			padding: 0 1rem;
+			@media ${device.laptop} {
+				width: 70%;
+				left: auto;
+				padding: 0;
+			}`
+			: ""
+	}
+	position: ${fixed ? "fixed" : "static"};
   height: 6.8rem;
   list-style: none;
   display: flex;
   column-gap: 0.5rem;
+	backdrop-filter: blur(1rem);
 `
 );
 

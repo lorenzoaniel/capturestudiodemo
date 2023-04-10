@@ -37,6 +37,7 @@ const Main = styled(motion.button)(
   height: 3.8rem;
   flex: 0 1 fit-content;
   padding: 0.2rem 1rem;
+	border-radius: 0.3rem;
 
 	font-weight: 400;
 	line-height: 0.2rem;
@@ -53,15 +54,10 @@ const _MotionVariants = (theme: any) => {
 	return {
 		Main: {
 			initial: {
-				border: `0.1rem solid rgba(252, 67, 8, 0)`,
-				borderRadius: `0.3rem`,
+				border: `0.1rem solid #0000000`,
 			},
 			whileHover: {
 				border: `0.1rem solid ${theme.color.orange.primary}`,
-				borderRadius: `0.3rem`,
-				transition: {
-					ease: "easeInOut",
-				},
 			},
 		},
 	};

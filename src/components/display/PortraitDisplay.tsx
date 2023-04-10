@@ -5,8 +5,6 @@ import ButtonPrimary from "../buttons/ButtonPrimary";
 import { useImage } from "react-image";
 import { device } from "../../styles/breakpoints";
 import DefaultModal from "../Modal/DefaultModal";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { selectPortraitInfo } from "../../redux/features/portraitsSlice";
 
 interface Props {
 	imgSrc: string;
@@ -31,8 +29,6 @@ const PortraitDisplay: React.FC<Props> = ({ imgSrc, date, title, desc, isLeft })
 	useEffect(() => {
 		setData({ imgSrc, date, title, desc, isLeft });
 	}, []);
-
-	console.log(toggle);
 
 	return (
 		<Main>

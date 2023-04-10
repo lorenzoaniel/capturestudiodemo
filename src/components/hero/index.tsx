@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { useImage } from "react-image";
 import styled, { useTheme } from "styled-components";
 import { device } from "../../styles/breakpoints";
 import { IoMdPlay } from "react-icons/io";
 import { motion_props } from "../../styles/mixins/motion_props";
+import DefaultModal from "../Modal/DefaultModal";
 
 interface Props {
 	title: string;
@@ -12,17 +13,22 @@ interface Props {
 }
 
 const Hero: React.FC<Props> = ({ title, desc }) => {
+	const [toggle, setToggle] = useState(false);
 	const theme: any = useTheme();
 	const { src } = useImage({
 		srcList: "../assets/images/intro/introimg.png",
 	});
+
+	const toggleModal = () => {
+		setToggle((curr) => !curr);
+	};
 
 	return (
 		<Main>
 			<Content>
 				<Title>{title}</Title>
 				<Desc>{desc}</Desc>
-				<Icon {...motion_props} variants={theme.motion.btn.default}>
+				<Icon onClick={() => toggleModal()} {...motion_props} variants={theme.motion.btn.default}>
 					<IoMdPlay style={{ height: "2.8rem", width: "2.8rem" }} />
 				</Icon>
 			</Content>
@@ -31,6 +37,19 @@ const Hero: React.FC<Props> = ({ title, desc }) => {
 					<img src={src} alt="Intro image" />
 				</ImgSection>
 			</Suspense>
+			<DefaultModal
+				data={[
+					<>
+						<video controls>
+							<source src="../assets/video/intro/introsample.mp4" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</>,
+				]}
+				title={"Sample Video"}
+				toggle={toggle}
+				toggleHandle={() => toggleModal()}
+			/>
 		</Main>
 	);
 };

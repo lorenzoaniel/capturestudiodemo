@@ -67,6 +67,17 @@ const SocialWrapper = styled(motion.div)(
   justify-content: space-between;
   width: 13.5rem; 
   order: 1;
+
+  & > svg:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+
+  & > svg:active {
+    transition: transform 0.3s ease;
+    transform: scale(1);
+  }
+
   @media ${device.laptop} {
     order: 2;
   }

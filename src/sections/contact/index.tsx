@@ -7,6 +7,7 @@ import { selectContactInfo } from "../../redux/features/contactSlice";
 import ButtonPrimary from "../../components/buttons/ButtonPrimary";
 import Footer from "../../components/footer";
 import DefaultModal from "../../components/Modal/DefaultModal";
+import DefaultForm from "../../components/form";
 
 const Contact: React.FC = () => {
 	const [toggle, setToggle] = useState(false);
@@ -28,7 +29,11 @@ const Contact: React.FC = () => {
 					handleClick={() => toggleModal()}
 				/>
 				<DefaultModal
-					data={[]}
+					data={
+						<>
+							<DefaultForm />
+						</>
+					}
 					title={"Contact Us"}
 					toggle={toggle}
 					toggleHandle={() => toggleModal()}
